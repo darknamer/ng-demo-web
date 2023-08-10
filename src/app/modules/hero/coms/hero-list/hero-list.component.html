@@ -1,0 +1,9 @@
+<carousel>
+    <slide *ngFor="let hero of heroes; let i = index">
+        <img [src]="hero.image" alt="first slide" style="display: block; width: 100%;">
+        <div class="carousel-caption d-none d-md-block">
+            <h3>{{ hero.title }}</h3>
+            <p>[{{ (i + 1) }}] {{ hero.description }}</p>
+        </div>
+    </slide>
+</carousel>

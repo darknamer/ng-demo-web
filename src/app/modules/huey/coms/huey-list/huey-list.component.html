@@ -1,0 +1,23 @@
+<button class="btn btn-primary" (click)="getLottory(2023)">2023</button>
+<button class="btn btn-warning" (click)="getLottory(2022)">2022</button>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">งวด</th>
+      <th scope="col">รางวัลที่ 1</th>
+      <th scope="col">เลขท้าย 2 ตัว</th>
+      <th scope="col">3 ตัวหน้า</th>
+      <th scope="col">3 ตัวหลัง</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let lotto of lottory">
+      <th scope="row">{{ lotto.date }}</th>
+      <td>{{ lotto.data.first[0] }}</td>
+      <td>{{ lotto.data.last2[0] }}</td>
+      <td>{{ lotto.data.last3f.join(', ') }}</td>
+      <td>{{ lotto.data.last3b.join(', ') }}</td>
+    </tr>
+  </tbody>
+</table>
