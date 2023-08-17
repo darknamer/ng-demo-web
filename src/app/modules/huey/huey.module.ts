@@ -5,12 +5,14 @@ import { HueyListComponent } from './coms/huey-list/huey-list.component';
 import { RouterModule, Routes } from '@angular/router';
 import { GloService } from './services/glo.service';
 import { HttpClientModule } from '@angular/common/http';
+import { HueyCheckComponent } from './coms/huey-check/huey-check.component';
 
 const routes: Routes = [
   {
     path: '', component: HueyLayoutComponent, children: [
       { path: '', redirectTo: 'list', pathMatch: 'full' },
       { path: 'list', component: HueyListComponent },
+      { path: 'check', component: HueyCheckComponent },
     ]
   },
   { path: '**', redirectTo: 'list', pathMatch: 'full' },
@@ -19,7 +21,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     HueyLayoutComponent,
-    HueyListComponent
+    HueyListComponent,
+    HueyCheckComponent
   ],
   imports: [
     CommonModule,
